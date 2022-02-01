@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1911249325}
   - component: {fileID: 1931937531411500062}
   - component: {fileID: 6722816699095443585}
+  - component: {fileID: 789530475224135434}
   m_Layer: 8
   m_Name: ShovelKnight
   m_TagString: Untagged
@@ -47,14 +48,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34174f6dd90a40e4ea09831813694761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_jumpApexHeight: 0
-  m_jumpApexTime: 0
+  direction: 0
+  m_jumpApexHeight: 5
+  m_jumpApexTime: 0.3
+  m_terminalVelocity: 25
   m_coyoteTime: 0
   m_jumpBufferTime: 0
-  m_accelerationTimeFromRest: 0
-  m_decelerationTimeToRest: 0
+  m_accelerationTimeFromRest: 0.25
+  m_decelerationTimeToRest: 0.2
+  m_maxHorizontalSpeed: 6
   m_accelerationTimeFromQuickturn: 0
-  m_decelerationTimeFromQuickturn: 0
+  m_decelerationTimeFromQuickturn: 1.2
 --- !u!114 &1911249325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +84,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.75}
+  m_Offset: {x: 0, y: 0.81}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -108,12 +112,28 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!70 &789530475224135434
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121767043531386}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.05}
+  m_Size: {x: 1, y: 0.1}
+  m_Direction: 1
 --- !u!1 &1467268772404152
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +180,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
