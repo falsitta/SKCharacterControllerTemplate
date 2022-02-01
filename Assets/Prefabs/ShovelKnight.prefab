@@ -48,13 +48,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_jumpApexHeight: 0
-  m_jumpApexTime: 0
-  m_coyoteTime: 0
-  m_jumpBufferTime: 0
-  m_accelerationTimeFromRest: 0
-  m_decelerationTimeToRest: 0
-  m_accelerationTimeFromQuickturn: 0
-  m_decelerationTimeFromQuickturn: 0
+  m_jumpApexTime: 20
+  m_terminalVelocity: 0
+  m_coyoteTime: 0.5
+  m_jumpBufferTime: 0.5
+  m_accelerationTimeFromRest: 15
+  m_decelerationTimeToRest: 15
+  m_maxHorizontalSpeed: 20
+  m_accelerationTimeFromQuickturn: 5
+  m_decelerationTimeFromQuickturn: 5
 --- !u!114 &1911249325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,12 +110,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &1467268772404152
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +162,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
